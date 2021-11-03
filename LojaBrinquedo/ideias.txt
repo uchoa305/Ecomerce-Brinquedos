@@ -1,0 +1,2 @@
+servlet catalogo, recebe uma op = " categoria", por esse parametro so exibe os brinquedos dessa op
+caso op esteja vazia exibe todos os brinquedos 
