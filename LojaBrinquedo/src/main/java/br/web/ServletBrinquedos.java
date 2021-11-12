@@ -2,6 +2,7 @@ package br.web;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
 import org.apache.tomcat.util.http.fileupload.disk.DiskFileItemFactory;
@@ -94,6 +95,30 @@ public class ServletBrinquedos extends HttpServlet {
 				List<Brinquedo> clist = dao.listarBrinquedos();
 				response.setStatus(HttpServletResponse.SC_OK);
 				response.getWriter().write(mapper.writeValueAsString(clist));
+			}else if(cmd.equalsIgnoreCase("detalhe")) 
+			{
+				
+				String cod_req = request.getParameter("cod"); 
+				ObjectMapper mapper = new ObjectMapper();
+				Brinquedo novo_brinquedo = dao.consultaBrinquedo(cod_req);
+				response.setStatus(HttpServletResponse.SC_OK);
+				response.getWriter().write(mapper.writeValueAsString(novo_brinquedo));
+				
+				
+			}else if(cmd.equalsIgnoreCase("redirectBrinq")) 
+			{
+				
+				String cod_req = request.getParameter("cod"); 
+				request.setAttribute("cod",cod_req);
+				rd = request.getRequestDispatcher("brinquedoDetalhe.jsp");
+				rd.forward(request, response);
+			}else if(cmd.equalsIgnoreCase("redirectEdit")) 
+			{
+				
+				String cod_req = request.getParameter("cod"); 
+				request.setAttribute("cod",cod_req);
+				rd = request.getRequestDispatcher("editToy.jsp");
+				rd.forward(request, response);
 			}
 			
 		}catch(Exception erro) 

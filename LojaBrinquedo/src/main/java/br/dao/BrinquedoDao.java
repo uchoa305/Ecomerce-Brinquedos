@@ -85,6 +85,40 @@ public class BrinquedoDao {
 			throw new Exception("erro ao carregar a lista" +sql );
 		}
 	}
+	public Brinquedo consultaBrinquedo(String cod_briquedo)throws Exception
+	{
+			if(cod_briquedo == null)
+			{
+				throw new Exception("Preencha todas as informações");
+			}
+			try 
+			{
+				String sql = "SELECT * FROM tbBrinquedo Where cod_brinquedo = ?" ; 
+				conn = this.conn; 
+				ps = conn.prepareStatement(sql); 
+				ps.setString(1, cod_briquedo);
+				rs = ps.executeQuery(); 
+				
+				if(rs.next()) 
+				{
+					String nome = rs.getString(3);
+					Double preco = rs.getDouble(4);
+					String descricao = rs.getString(5);
+					String urlFoto = rs.getString(6);
+					int categoria = rs.getInt(7);
+					String cod = rs.getString(8); 
+					
+					brinquedo = new Brinquedo(cod,nome,categoria,preco,descricao,urlFoto);
+				}
+				return brinquedo;
+			}catch (SQLException sql) {
+				throw new Exception("Erro ao buscar os dados" + sql);
+			}
+			finally 
+			{
+				ConnectionFactory.closeConnection(conn, ps, rs);
+			}
+	}
 	
 
 }

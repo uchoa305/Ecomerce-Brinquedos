@@ -26,13 +26,30 @@
       <div class="accordion-body">
         <div class="card" style="width: 18rem;">
   <ul class="list-group list-group-flush">
-    <li class="list-group-item"><a href="FormCadastraBrinquedo.jsp" >Incluir</a></li>
+    <li class="list-group-item"><a href="newToy.jsp" >Incluir</a></li>
     <li class="list-group-item">Atualizar</li>
     <li class="list-group-item">Consultar</li>
-    <li class="list-group-item"><a href="BrinquedosDestaque.html" >Listar</a></li>
+    <li class="list-group-item"><a href="listToysAdm.jsp" >Listar</a></li>
     <li class="list-group-item">Excluir</li>
   </ul>
 </div>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+       Categoria
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+      <div class="accordion-body">
+        <ul class="list-group list-group-flush">
+    <li class="list-group-item"><a href="FormCadastraBrinquedo.jsp" >Incluir</a></li>
+    <li class="list-group-item">Atualizar</li>
+    <li class="list-group-item"><a href="BrinquedosDestaque.html" >Listar</a></li>
+    <li class="list-group-item">Excluir</li>
+  </ul>
       </div>
     </div>
   </div>
@@ -44,7 +61,13 @@
     </h2>
     <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
       <div class="accordion-body">
-        
+        <ul class="list-group list-group-flush">
+    <li class="list-group-item"><a href="FormCadastraBrinquedo.jsp" >Incluir</a></li>
+    <li class="list-group-item">Atualizar</li>
+    <li class="list-group-item">Consultar</li>
+    <li class="list-group-item"><a href="BrinquedosDestaque.html" >Listar</a></li>
+    <li class="list-group-item">Excluir</li>
+  </ul>
       </div>
     </div>
   </div>

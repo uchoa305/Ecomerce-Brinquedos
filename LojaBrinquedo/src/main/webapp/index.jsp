@@ -26,13 +26,20 @@
 </head>
 
 <body>
-    <div id="conteudo-pagina-lida"></div>
-    <!-- Hero Section End -->
-
+	<!-- Hero Section End -->
+    <div id="conteudo-pagina-lida">
+    
+    
+    
+    </div>
+    
+	
     
     <!-- Featured Section Begin -->
     <!--  -->
-    <div id="listToy"></div>
+    <div id="listToy">
+    
+    </div>
     <br/>
     <!--  Featured Section End-->
 
@@ -333,7 +340,7 @@
     <script src="js/mixitup.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/bootstrap.min.js.map"></script>
+    <script src="js/bootstrap.js.map"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"
             integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
             crossorigin="anonymous"></script>
@@ -343,7 +350,7 @@
     <script>
     $(document).ready(function(){   
         $(function(){
-            $("#conteudo-pagina-lida").load("menuFront.html"); 
+        	 $("#conteudo-pagina-lida").load("headerMenu.html"); 
             
         });
         
@@ -357,14 +364,17 @@
         
     
 	});
+    
     $(document).ready(function(){   
         $(function(){
-            $("#listToy").load("BrinquedosDestaque.html"); 
+            $("#listToy").load("listToys.jsp"); 
             
         });
         
     
 	});
+    
+    
     </script>
 
 </body>
