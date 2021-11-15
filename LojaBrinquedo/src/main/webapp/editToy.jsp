@@ -19,62 +19,63 @@
 	<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
 </head>
 <body>
-<input type="hidden" id='CodBrinq'  value="${cod}">  
+
 	<section class="product-details spad">
         <div class="container">
-            <form method="post" enctype="multipart/form-data">
- 		<input type="hidden" name="cmd" value="incluir">
-		  <div class="row">
-		    <div class="col-sm-6">
-		    	<div class="mb-3" id="picBrinquedo">
-    			
- 			 	</div>
- 			 </div>	
- 			 <div class="col-sm-4">	
-		    <div class="mb-3" id="nomeBrinquedo">
-    			<label for="exampleInputEmail1" class="form-label">Nome Brinquedo</label>
- 			 </div>
-				<div class="mb-3" id="codBrinquedo">
-    				<label for="exampleInputEmail1" class="form-label" >Cod Brinquedo</label>
- 			 	</div>
- 			 	<div class="mb-3" id="precoBrinquedo">
-    				<label for="exampleInputEmail1" class="form-label">Preço</label>
-    				
- 			 	</div>
- 			 	<div class="mb-5" id="categoriaBrinquedo">
- 			 		<label class="form-label">Categoria</label>
-		    		
- 			 	</div>
-			</div>
-		    
-		  </div>
-		 
-		  <br>
-		  <div class="row">
-		    	<div class="col-sm-10" id="desc">
-		    		<label for="exampleInputEmail1" class="form-label">Descrição</label>
-    				
-		    	</div>
-		   </div>
-		   <br>
-		   <div class="row">
-		    	<div class="col-sm-4">
-		    		<label for="exampleInputEmail1" class="form-label">Foto:</label>
-    					<div class="input-group">
-  							<input type="file" class="form-control" name="file" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
-  							<button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">+</button>
-						</div>
-		    	</div>
-		    </div>
-		    <br>
-		    <div class="row">
-		    	<div class="col-sm-4">
-		    		<button type="button" class="btn btn-danger">Excluir</button>
-		    		<button type="submit" class="btn btn-outline-success"> Salvar</button>
-		    	</div>
-		    </div>  
+            <form method="post" action="brinquedo?cmd=edit" enctype="multipart/form-data" id="frmEdit">
+		 		<input type="hidden" name="cmd" value="incluir">
+		 		<input type="hidden" id='CodBrinq' name="old_cod" value="${cod}">  
+				  <div class="row">
+				    <div class="col-sm-6">
+				    	<div class="mb-3" id="picBrinquedo">
+		    			
+		 			 	</div>
+		 			 </div>	
+		 			 <div class="col-sm-4">	
+				    <div class="mb-3" id="nomeBrinquedo">
+		    			<label for="exampleInputEmail1" class="form-label">Nome Brinquedo</label>
+		 			 </div>
+						<div class="mb-3" id="codBrinquedo">
+		    				<label for="exampleInputEmail1" class="form-label" >Cod Brinquedo</label>
+		 			 	</div>
+		 			 	<div class="mb-3" id="precoBrinquedo">
+		    				<label for="exampleInputEmail1" class="form-label">Preço</label>
+		    				
+		 			 	</div>
+		 			 	<div class="mb-5" id="categoriaBrinquedo">
+		 			 		<label class="form-label">Categoria</label>
+				    		
+		 			 	</div>
+					</div>
+				    
+				  </div>
+				 
+				  <br>
+				  <div class="row">
+				    	<div class="col-sm-10" id="desc">
+				    		<label for="exampleInputEmail1" class="form-label">Descrição</label>
+		    				
+				    	</div>
+				   </div>
+				   <br>
+				   <div class="row">
+				    	<div class="col-sm-4">
+				    		<label for="exampleInputEmail1" class="form-label">Foto:</label>
+		    					<div class="input-group">
+		  							<input type="file" class="form-control" name="file" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+		  							<button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">+</button>
+								</div>
+				    	</div>
+				    </div>
+				    <br>
+				    <div class="row">
+				    	<div class="col-sm-4">
+				    		<a href="brinquedo?cmd=del&old_cod=${cod}" class="btn btn-danger"> <button type="button" id="btnDel" class="btn btn-danger">Excluir</button></a>
+				    		<button type="submit" class="btn btn-outline-success"> Salvar</button>
+				    	</div>
+				    </div>  
 		   
-	</form>
+			</form>
         </div>
     </section>
     <!-- Js Plugins -->
@@ -123,7 +124,18 @@ then(function (response){
 });
 
 //ENVIO DO FORM PARA O BANCO 
-
+ /* $("#btnDel").click(function(){
+  		$.ajax({
+  			url: 'brinquedo?cmd=del',
+  			type: 'POST',
+  			data: $('#formCat').serialize(),
+  			sucess: function (data) {
+  				alert("Brinquedo excluido com sucesso")
+  				$(location).prop('href', 'listToysAdm.jsp')
+  			}	
+  		
+  		});
+});  */
 
 </script>
 </body>

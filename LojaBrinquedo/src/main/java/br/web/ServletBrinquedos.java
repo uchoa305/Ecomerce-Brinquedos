@@ -119,6 +119,14 @@ public class ServletBrinquedos extends HttpServlet {
 				request.setAttribute("cod",cod_req);
 				rd = request.getRequestDispatcher("editToy.jsp");
 				rd.forward(request, response);
+			}else if(cmd.equalsIgnoreCase("del"))
+			{
+				String old_cod = request.getParameter("old_cod"); 
+				//chama metodo de salvar na classe brinquedoDAO
+				dao.del(old_cod);
+				// redireciona para a index
+				response.sendRedirect("listToysAdm.jsp"); 
+				
 			}
 			
 		}catch(Exception erro) 
@@ -192,6 +200,25 @@ public class ServletBrinquedos extends HttpServlet {
 							// redireciona para a index
 							response.sendRedirect("BrinquedosDestaque.html");  
 							//envia junto request e response
+							
+						}
+						if(cmd.equalsIgnoreCase("edit"))
+						{
+							String old_cod = request.getParameter("old_cod"); 
+							//chama metodo de salvar na classe brinquedoDAO
+							dao.editar(brinquedo, old_cod);
+							// redireciona para a index
+							response.sendRedirect("listToysAdm.jsp");  
+							//envia junto request e response
+							
+						}
+						if(cmd.equalsIgnoreCase("del"))
+						{
+							String old_cod = request.getParameter("old_cod"); 
+							//chama metodo de salvar na classe brinquedoDAO
+							dao.del(old_cod);
+							// redireciona para a index
+							response.sendRedirect("listToysAdm.jsp"); 
 							
 						}
 						
