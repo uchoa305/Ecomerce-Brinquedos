@@ -54,8 +54,11 @@ public class ServletCategorias extends HttpServlet {
 					try 
 					{
 						categoria.setCategoria(request.getParameter("txtNomeCategoria"));
+						
 						categoria.setDescricao(request.getParameter("txtDescricao"));
-						categoria.setStatus(Boolean.parseBoolean(request.getParameter("slcStatus")));
+						categoria.setStatus(true);
+						categoria.setFaixa_etaria(request.getParameter("txtFaixaEtaria"));
+						categoria.setCod_linha(Integer.parseInt(request.getParameter("slcLinha")));
 					}catch (Exception e) {
 						e.printStackTrace();
 						
@@ -81,6 +84,38 @@ public class ServletCategorias extends HttpServlet {
 							e.printStackTrace();
 						}			
 						
+					}else if(cmd.equalsIgnoreCase("redirectEdit")) 
+					{
+						String cod_req = request.getParameter("cod"); 
+						request.setAttribute("cod",cod_req);
+						rd = request.getRequestDispatcher("editCategoria.jsp");
+						rd.forward(request, response);
+					}else if(cmd.equalsIgnoreCase("detalhe")) 
+					{
+						
+						int cod_req = Integer.parseInt(request.getParameter("cod")); 
+						ObjectMapper mapper = new ObjectMapper();
+						Categoria nova_categoria = dao.consultaCategoria(cod_req);
+						response.setStatus(HttpServletResponse.SC_OK);
+						response.getWriter().write(mapper.writeValueAsString(nova_categoria));
+						
+						
+					}else if(cmd.equals("edit")) 
+					{
+						
+						int old_cod = Integer.parseInt(request.getParameter("old_cod")); 
+						
+						dao.editar(categoria, old_cod); 
+						System.out.println("5 - retornando o dao");
+						response.sendRedirect("listCategorias.jsp");
+					}else if(cmd.equalsIgnoreCase("del"))
+					{
+						int old_cod =Integer.parseInt(request.getParameter("old_cod")); 
+						//chama metodo de salvar na classe brinquedoDAO
+						dao.del(old_cod);
+						// redireciona para a index
+						response.sendRedirect("listCategorias.jsp"); 
+						
 					}
 					
 				}catch (Exception e) {
@@ -105,7 +140,12 @@ public class ServletCategorias extends HttpServlet {
 			try 
 			{
 				categoria.setCategoria(request.getParameter("txtNomeCategoria"));
+				
+				System.out.println(request.getParameter("txtNomeCategoria"));
+				
 				categoria.setDescricao(request.getParameter("txtDescricaoCategoria"));
+				categoria.setFaixa_etaria(request.getParameter("txtFaixaEtaria"));
+				categoria.setCod_linha(Integer.parseInt(request.getParameter("slcLinha")));
 				categoria.setId(0);
 				categoria.setStatus(true); 
 			}catch(Exception e )
@@ -119,6 +159,7 @@ public class ServletCategorias extends HttpServlet {
 			RequestDispatcher rd = null;
 			
 			//incluir categoria 
+			
 			if(cmd.equalsIgnoreCase("incluir")) 
 			{
 					dao.salvar(categoria);
@@ -130,6 +171,14 @@ public class ServletCategorias extends HttpServlet {
 					 * 
 					 * rd.forward(request, response);
 					 */
+			}else if(cmd.equals("edit")) 
+			{
+				
+				int old_cod = Integer.parseInt(request.getParameter("old_cod")); 
+				
+				dao.editar(categoria, old_cod); 
+				System.out.println("5 - retornando o dao");
+				response.sendRedirect("listCategorias.jsp");
 			}
 		}catch(Exception erro) 
 		{

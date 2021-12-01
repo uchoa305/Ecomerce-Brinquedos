@@ -92,10 +92,30 @@
       <div class="modal-body">
         <form action="" id="formCat" method="post" clas="form" enctype="multipart/form-data">
 	       	<!--  <input type="hidden" name="cmd" value="incluir" > -->
+	       	<div class="row">
 	          <div class="mb-3">
 	            <label for="recipient-name" class="col-form-label">Categoria:</label>
 	            <input type="text" class="form-control" name="txtNomeCategoria">
+	       
 	          </div>
+	           </div>
+	          <div class="row">
+	          <div class="mb-3">
+	            <label for="recipient-name" class="col-form-label">Linha:</label>
+	            <select class="form-select" aria-label="Default select example" id="slcLinha" name="slcLinha">
+					  <option value="1">Meninos</option>
+					  <option value="2">Meninas</option>
+					  <option value="3">Todos</option>
+				</select>
+	          </div>
+	          </div>
+	          <div class="row">
+	          <div class="mb-3">
+	            <label for="recipient-name" class="col-form-label">Faixa Etaria:</label>
+	            <input type="text" class="form-control" name="txtFaixaEtaria">
+	       
+	          </div>
+	           </div>
 	          <div class="mb-3">
 	            <label for="message-text" class="col-form-label">Descrição:</label>
 	            <textarea class="form-control" id="exampleFormControlTextarea1" name="txtDescricaoCategoria" rows="3"></textarea>

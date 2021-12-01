@@ -56,4 +56,8 @@ DELETE FROM tbCategoria WHERE id=20;
 select * from tbBrinquedo;
 select * from tbCategoria;
 
+ALTER TABLE tbCategoria
+ADD faixa_etaria varchar(20)  not null;
 
+ALTER TABLE tbCategoria
+ADD cod_linha int  not null;

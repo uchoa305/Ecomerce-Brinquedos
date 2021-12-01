@@ -70,7 +70,7 @@
 				    <br>
 				    <div class="row">
 				    	<div class="col-sm-4">
-				    		<a href="brinquedo?cmd=del&old_cod=${cod}" class="btn btn-danger"> <button type="button" id="btnDel" class="btn btn-danger">Excluir</button></a>
+				    		<a href="brinquedo?cmd=del&old_cod=${cod}" class="btn btn-danger"> Excluir</a>
 				    		<button type="submit" class="btn btn-outline-success"> Salvar</button>
 				    	</div>
 				    </div>  

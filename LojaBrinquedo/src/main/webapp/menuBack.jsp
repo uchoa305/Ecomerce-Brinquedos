@@ -27,10 +27,9 @@
         <div class="card" style="width: 18rem;">
   <ul class="list-group list-group-flush">
     <li class="list-group-item"><a href="newToy.jsp" >Incluir</a></li>
-    <li class="list-group-item">Atualizar</li>
-    <li class="list-group-item">Consultar</li>
+
     <li class="list-group-item"><a href="listToysAdm.jsp" >Listar</a></li>
-    <li class="list-group-item">Excluir</li>
+   
   </ul>
 </div>
       </div>
@@ -45,10 +44,8 @@
     <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
       <div class="accordion-body">
         <ul class="list-group list-group-flush">
-    <li class="list-group-item"><a href="FormCadastraBrinquedo.jsp" >Incluir</a></li>
-    <li class="list-group-item">Atualizar</li>
-    <li class="list-group-item"><a href="BrinquedosDestaque.html" >Listar</a></li>
-    <li class="list-group-item">Excluir</li>
+    <li class="list-group-item"><a href="newCategoria.jsp" >Incluir</a></li>
+    <li class="list-group-item"><a href="listCategorias.jsp" >Listar</a></li>
   </ul>
       </div>
     </div>
@@ -63,10 +60,8 @@
       <div class="accordion-body">
         <ul class="list-group list-group-flush">
     <li class="list-group-item"><a href="FormCadastraBrinquedo.jsp" >Incluir</a></li>
-    <li class="list-group-item">Atualizar</li>
-    <li class="list-group-item">Consultar</li>
     <li class="list-group-item"><a href="BrinquedosDestaque.html" >Listar</a></li>
-    <li class="list-group-item">Excluir</li>
+    
   </ul>
       </div>
     </div>
